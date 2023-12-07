@@ -42,7 +42,7 @@ public class UserServlet extends HttpServlet {
     			RequestDispatcher dispatcher = request.getRequestDispatcher("/viewAdmin.jsp");
     			 dispatcher.forward(request, response);
     		}else if(check == "user") {
-    			RequestDispatcher dispatcher = request.getRequestDispatcher("/viewUser.jsp");
+    			RequestDispatcher dispatcher = request.getRequestDispatcher("/Index.jsp");
     			 dispatcher.forward(request, response);
     		}
     	}
