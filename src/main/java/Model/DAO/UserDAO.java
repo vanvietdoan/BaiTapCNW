@@ -12,7 +12,8 @@ import Model.BEAN.UserBean;
 public class UserDAO {
     private Connection connection;
 
-    public UserDAO(Connection connection) {
+    public UserDAO() {
+    	
     	connection = DBConnect.getConnection();
     }
 
@@ -101,4 +102,26 @@ public class UserDAO {
         }
         return false;
     }
+    public String checkLogin(String username, String password) {
+        String query = "SELECT role FROM users WHERE username = ? AND password = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setString(1, username);
+            preparedStatement.setString(2, password);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            System.out.println("đã tới đây");
+            if (resultSet.next()) {
+                String role = resultSet.getString("role");
+                
+                if ("admin".equals(role)) {
+                    return "admin";
+                } else if ("user".equals(role)) {
+                    return "user";
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); 
+        }
+        return null; 
+    }
+
 }
