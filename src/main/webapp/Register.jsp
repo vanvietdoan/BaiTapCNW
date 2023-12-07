@@ -26,27 +26,41 @@
         	margin-bottom: 16px;
         }
         
-        
     </style>
 <body>
 <div class="container login-container">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title text-center">Login</h5>
+            <h5 class="card-title text-center">Register</h5>
             <form>
                 <div class="form-group">
                     <label for="username">Username:</label>
                     <input type="text" class="form-control" id="username" placeholder="Enter your username">
                 </div>
                 <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                    <label for="username">Email:</label>
+                    <input type="text" class="form-control" id="username" placeholder="ex: a@gmail.com">
                 </div>
-           		
-                <input class="form-control btn btn-primary btn-block btn-submit" type="submit" name=action value="Login">
+                <div class="form-group">
+                    <label for="username">Phone number:</label>
+                    <input type="text" class="form-control" id="username" placeholder="ex: 0830138281">
+                </div>
+                
+                <div class="form-group">
+                    <label for="username">Address:</label>
+                    <input type="text" class="form-control" id="username" placeholder="123 Nguyen Luong Bang ..">
+                </div>
+                
+                 <div class="form-group">
+                    <label for="username">Password:</label>
+                    <input type="password" class="form-control" id="username">
+                </div>
+               
+                <input class="form-control btn btn-primary btn-block btn-success" type="submit" name=action value="Register">
                 
                 <hr>
-                <input class="form-control btn btn-primary btn-block btn-success" type="submit" name=action value="Register">
+                
+                 <input class="form-control btn btn-primary btn-block btn-primary" type="submit" name=action value="Back">
                 
 <!--                 <div style="display: flex; justify-content: space-between; margin-top: 20px">
                 	<button  type="submit" class="btn btn-primary btn-block">Login</button>
