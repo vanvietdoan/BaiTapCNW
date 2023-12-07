@@ -11,15 +11,13 @@ import Model.BEAN.CategoryBean;
 
 
 public class CategoryDAO {
-    // You would typically inject the DataSource or Connection in a real application
-    // For simplicity, assuming you have a ConnectionProvider class.
+   
     private Connection connection;
 
     public CategoryDAO() {
     	connection = DBConnect.getConnection();
     }
 
-    // Get category by categoryId
     public CategoryBean getCategoryById(int categoryId) {
         CategoryBean category = null;
         String query = "SELECT * FROM categories WHERE category_id = ?";
@@ -37,7 +35,7 @@ public class CategoryDAO {
         return category;
     }
 
-    // Get all categories
+    
     public List<CategoryBean> getAllCategories() {
         List<CategoryBean> categories = new ArrayList<>();
         String query = "SELECT * FROM categories";
@@ -50,7 +48,7 @@ public class CategoryDAO {
                 categories.add(category);
             }
         } catch (SQLException e) {
-            e.printStackTrace(); // Handle this exception properly in a real application
+            e.printStackTrace(); 
         }
         return categories;
     }

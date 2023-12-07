@@ -27,27 +27,10 @@ public class UserServlet extends HttpServlet {
         String model = request.getParameter("model");
        
 
-        if ("login".equals(model)) {
-            viewLogin(request, response);
-        }  
+//        if ("login".equals(model)) {
+//            viewLogin(request, response);
+//        }  
     }
-    private void viewLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	String password = request.getParameter("password");
-    	String username = request.getParameter("username");
-    	UserBO userBO = new UserBO();
-    	String check = null;
-    	check =userBO.loginUser(username, password);
-    	if( check!=null) {
-    		if(check == "admin") {
-    			RequestDispatcher dispatcher = request.getRequestDispatcher("/viewAdmin.jsp");
-    			 dispatcher.forward(request, response);
-    		}else if(check == "user") {
-    			RequestDispatcher dispatcher = request.getRequestDispatcher("/Index.jsp");
-    			 dispatcher.forward(request, response);
-    		}
-    	}
-    	
-       
-    }
+    
    
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="Model.BEAN.CategoryBean" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -105,17 +106,14 @@
 								<div class="navbar-collapse"">	
 									<div class="nav justify-content-center">	
 										<ul class="nav main-menu menu navbar-nav">
-												
-											<li><a href="#">IPhone</a></li>
-											<li><a href="#">Samsung</a></li>
-											<li><a href="#">Oppo</a></li>
-											<li><a href="#">Nokia</a></li>
-											<li><a href="#">Xiaomi</a></li>
-											<li><a href="#">Realme</a></li>
-											<li><a href="#">Ipad</a></li>
-											<li><a href="#">Accessory</a></li>
-												
-											
+										 <%
+											    ArrayList<CategoryBean> listCategory = (ArrayList<CategoryBean>) request.getAttribute("listCategorys");
+											    for (CategoryBean category : listCategory) {
+											%>
+											    <li><a href="#"><%= category.getName() %></a></li>
+											<%
+											    }
+											%> 
 										</ul>
 									</div>
 								</div>

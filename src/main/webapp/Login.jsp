@@ -60,7 +60,7 @@
 </head>
 <body>
     
-    <form action="/WebBanHang/UserServlet" method="post">
+    <form action="CheckLoginServlet" method="post">
       <h2>Trang đăng nhập</h2>
         <label for="username">Tài Khoản:</label>
         <input type="text" id="username" name="username" required>
