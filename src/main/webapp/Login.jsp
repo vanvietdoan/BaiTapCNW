@@ -1,69 +1,75 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</head>
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
         body {
+            font-family: Arial, sans-serif;
             background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
 
-        .login-container {
-            max-width: 400px;
+        h2 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        form {
+            max-width: 300px;
             margin: auto;
-            margin-top: 100px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .form-group {
-        	padding: 6px;
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
         }
-        .btn-submit {
-        	margin-top: 16px;
-        	margin-bottom: 16px;
-        }
-        .btn-submit::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -2px;
+
+        input {
             width: 100%;
-            height: 2px;
-            background-color: #007bff; /* Màu sắc của đường gạch dưới */
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
         }
-        
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
     </style>
+</head>
 <body>
-<div class="container login-container">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title text-center">Login</h5>
-            <form>
-                <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" class="form-control" id="username" placeholder="Enter your username">
-                </div>
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter your password">
-                </div>
-           		
-                <input class="form-control btn btn-primary btn-block btn-submit" type="submit" name=action value="Login">
-                
-                <hr>
-                <input class="form-control btn btn-primary btn-block btn-success" type="submit" name=action value="Register">
-                
-<!--                 <div style="display: flex; justify-content: space-between; margin-top: 20px">
-                	<button  type="submit" class="btn btn-primary btn-block">Login</button>
-                	<button type="submit"  class="btn btn-primary btn-block" >Register </button>
-                </div> -->
-                
-            </form>
-        </div>
-    </div>
-</div>
+    
+    <form action="/WebBanHang/UserServlet" method="post">
+      <h2>Trang đăng nhập</h2>
+        <label for="username">Tài Khoản:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Mật Khẩu:</label>
+        <input type="password" id="password" name="password" required>
+
+        <input type="hidden" name="model" value="login">
+        <input type="submit" value="Đăng Nhập">
+    </form>
 </body>
 </html>

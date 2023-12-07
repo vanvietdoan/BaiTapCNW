@@ -7,16 +7,19 @@ public class UserBean {
     private String password;
     private String address;
     private String phoneNumber;
+    private String role;
+    
     
     public UserBean() {}
     
-    public UserBean(int userId, String username, String email, String password, String address, String phoneNumber) {
+    public UserBean(int userId, String username, String email, String password, String address, String phoneNumber, String role) {
     	this.userId = userId;
     	this.username = username;
     	this.email = email;
     	this.password = password;
     	this.address = address;
     	this.phoneNumber = phoneNumber;
+    	this.role = role;
     }
 
     // Getters and setters
@@ -38,6 +41,12 @@ public class UserBean {
 
     public String getEmail() {
         return email;
+    }
+    public String getRole() {
+        return role;
+    }
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public void setEmail(String email) {
@@ -67,4 +76,5 @@ public class UserBean {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+    
 }

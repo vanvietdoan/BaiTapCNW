@@ -14,8 +14,7 @@ public class DBConnect {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            throw new RuntimeException("Error loading MySQL JDBC Driver");
+            throw new RuntimeException("Error loading MySQL JDBC Driver", e);
         }
     }
 
@@ -23,8 +22,7 @@ public class DBConnect {
         try {
             return DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
         } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException("Error connecting to the database");
+            throw new RuntimeException("Error connecting to the database", e);
         }
     }
 
